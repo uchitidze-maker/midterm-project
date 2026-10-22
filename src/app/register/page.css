@@ -1,0 +1,95 @@
+.registerPage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px;
+  background: #f4f6f8;
+}
+
+.registerForm {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(20, 35, 50, 0.1);
+}
+
+.registerForm h1 {
+  margin: 0 0 8px;
+  color: #172b4d;
+  font-size: 26px;
+}
+
+.formIntro {
+  margin: 0 0 22px;
+  color: #5e6c84;
+}
+
+.registerForm label {
+  margin: 14px 0 6px;
+  color: #253858;
+  font-weight: 600;
+}
+
+.registerForm input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cbd2d9;
+  border-radius: 7px;
+  font: inherit;
+}
+
+.registerForm input:focus {
+  outline: 2px solid #7aa7e8;
+  border-color: #3b73c5;
+}
+
+.fieldError {
+  margin: 5px 0 0;
+  color: #b42318;
+  font-size: 14px;
+}
+
+.registerForm button {
+  margin-top: 24px;
+  padding: 12px;
+  border: 0;
+  border-radius: 7px;
+  background: #245ca6;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.registerForm button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.formMessage {
+  margin: 16px 0 0;
+  line-height: 1.5;
+}
+
+.successMessage {
+  color: #167447;
+}
+
+.errorMessage {
+  color: #b42318;
+}
+
+@media (max-width: 520px) {
+  .registerForm {
+    padding: 24px 18px;
+  }
+
+  .registerForm h1 {
+    font-size: 22px;
+  }
+}
