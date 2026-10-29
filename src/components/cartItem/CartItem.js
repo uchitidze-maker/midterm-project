@@ -1,22 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import {
+  increaseQuantity,
+  decreaseQuantity,
+  removeFromCart,
+} from "@/redux/cartSlice";
 
-export default function CartItem({ product, onDelete }) {
-  const [quantity, setQuantity] = useState(1);
-
-  function increaseQuantity() {
-    if (quantity < 10) {
-      setQuantity(quantity + 1);
-    }
-  }
-
-  function decreaseQuantity() {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  }
+export default function CartItem({ product }) {
+  const dispatch = useDispatch();
 
   return (
     <article className="cartItem">
@@ -33,24 +26,32 @@ export default function CartItem({ product, onDelete }) {
       </div>
 
       <div className="cartQuantity">
-        <button onClick={decreaseQuantity} disabled={quantity === 1}>
+        <button
+          type="button"
+          onClick={() => dispatch(decreaseQuantity(product.id))}
+          disabled={product.quantity === 1}
+        >
           −
         </button>
 
-        <span>{quantity}</span>
+        <span>{product.quantity}</span>
 
-        <button onClick={increaseQuantity} disabled={quantity === 10}>
+        <button
+          type="button"
+          onClick={() => dispatch(increaseQuantity(product.id))}
+        >
           +
         </button>
       </div>
 
       <p className="cartPrice">
-        ${(product.price * quantity).toFixed(2)}
+        ${(product.price * product.quantity).toFixed(2)}
       </p>
 
       <button
+        type="button"
         className="cartDelete"
-        onClick={() => onDelete(product.id)}
+        onClick={() => dispatch(removeFromCart(product.id))}
       >
         წაშლა
       </button>

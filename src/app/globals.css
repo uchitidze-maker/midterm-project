@@ -97,6 +97,21 @@ main {
   font-weight: bold;
 }
 
+.addToCartButton {
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #153d77;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.addToCartButton:hover {
+  background: #2874e8;
+}
+
 .productDetails {
   display: flex;
   align-items: flex-start;
@@ -238,6 +253,15 @@ main {
   color: #a32020;
 }
 
+.cartSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 20px 0;
+  font-weight: bold;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -251,6 +275,78 @@ main {
 .footerLinks {
   display: flex;
   gap: 24px;
+}
+
+/* Login გვერდი */
+
+.loginPage {
+  min-height: 65vh;
+  display: grid;
+  place-items: center;
+  padding: 40px 20px;
+}
+
+.loginPage form {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+.loginPage h1 {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.loginPage label {
+  font-weight: 600;
+}
+
+.loginPage input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #cccccc;
+  border-radius: 7px;
+  font-size: 16px;
+}
+
+.loginPage label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loginPage button {
+  padding: 12px;
+  border: none;
+  border-radius: 7px;
+  background: #153d77;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.loginPage button:hover {
+  background: #2874e8;
+}
+
+.loginPage button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loginPage form p {
+  margin: 0;
+  color: #c62828;
+  font-size: 14px;
+}
+
+.loginPage > p {
+  text-align: center;
 }
 
 @media (max-width: 1000px) {
@@ -291,6 +387,10 @@ main {
   .cartDelete {
     justify-self: start;
   }
+
+  .cartSummary {
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 600px) {
@@ -299,6 +399,7 @@ main {
   }
 
   .navbar {
+    flex-wrap: wrap;
     gap: 24px;
     padding: 20px;
   }
@@ -323,5 +424,9 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 14px;
+  }
+
+  .loginPage form {
+    padding: 24px;
   }
 }
